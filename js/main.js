@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	const $day = document.querySelector('.timer__day')
 	const $hour = document.querySelector('.timer__hour')
 	const $minute = document.querySelector('.timer__minute')
+	const $dayss = document.querySelector('.timer__dayss')
+	const $hourss = document.querySelector('.timer__hourss')
+	const $minutess = document.querySelector('.timer__minutess')
 
 	const deadline = new Date(2024, 3, 10)
 
@@ -26,22 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0
 		const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0
 		const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0
-		$days.textContent = days < 10 ? '0' + days : days
-		$hours.textContent = hours < 10 ? '0' + hours : hours
-		$minutes.textContent = minutes < 10 ? '0' + minutes : minutes
-		$day.textContent = days < 10 ? '0' + days : days
-		$hour.textContent = hours < 10 ? '0' + hours : hours
-		$minute.textContent = minutes < 10 ? '0' + minutes : minutes
-		$days.dataset.title = declensionNum(days, ['Day', 'Day', 'Days'])
-		$hours.dataset.title = declensionNum(hours, ['Hour', 'Hour', 'Hours'])
-		$minutes.dataset.title = declensionNum(minutes, [
-			'Minute',
-			'Minutes',
-			'Minutes',
-		])
-		$day.dataset.title = declensionNum(days, ['Day', 'Day', 'Days'])
-		$hour.dataset.title = declensionNum(hours, ['Hour', 'Hour', 'Hours'])
-		$minute.dataset.title = declensionNum(minutes, [
+		$dayss.textContent = days < 10 ? '0' + days : days
+		$hourss.textContent = hours < 10 ? '0' + hours : hours
+		$minutess.textContent = minutes < 10 ? '0' + minutes : minutes
+		$dayss.dataset.title = declensionNum(days, ['Day', 'Day', 'Days'])
+		$hourss.dataset.title = declensionNum(hours, ['Hour', 'Hour', 'Hours'])
+		$minutess.dataset.title = declensionNum(minutes, [
 			'Minute',
 			'Minutes',
 			'Minutes',
