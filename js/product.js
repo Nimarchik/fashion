@@ -3,80 +3,93 @@ const productList = [
 		title: 'Spread Collar Shirt',
 		img: '../img/product1.jpg',
 		price: '48.99$',
+		data: 1,
 	},
 	{
 		title: 'Shine On Me Blouse',
 		img: '../img/product2.jpg',
 		price: '42.99$',
+		data: 2,
 	},
 	{
 		title: 'Gray Solid Padded Jacket',
 		img: '../img/product3.jpg',
 		price: '32.99$',
+		data: 3,
 	},
 	{
 		title: 'Printed Loose T-shirt',
 		img: '../img/product4.jpg',
 		price: '22.99$',
+		data: 3,
 	},
 	{
 		title: 'Summer Wind Crop Shirt',
 		img: '../img/product5.jpg',
 		price: '39.99$',
+		data: 4,
 	},
 	{
 		title: 'Tailored Jacket',
 		img: '../img/product6.jpg',
 		price: '46.00$',
+		data: 5,
 	},
 	{
 		title: 'Solid Round Neck T-shirt',
 		img: '../img/product7.jpg',
 		price: '36.00$',
+		data: 6,
 	},
 	{
 		title: 'Spread Collar Shirt',
 		img: '../img/product1.jpg',
 		price: '48.99$',
+		data: 7,
 	},
 	{
 		title: 'Shine On Me Blouse',
 		img: '../img/product2.jpg',
 		price: '42.99$',
+		data: 8,
 	},
 	{
 		title: 'Gray Solid Padded Jacket',
 		img: '../img/product3.jpg',
 		price: '32.99$',
+		data: 9,
 	},
 	{
 		title: 'Printed Loose T-shirt',
 		img: '../img/product4.jpg',
 		price: '22.99$',
+		data: 10,
 	},
 	{
 		title: 'Summer Wind Crop Shirt',
 		img: '../img/product5.jpg',
 		price: '39.99$',
+		data: 11,
 	},
 	{
 		title: 'Tailored Jacket',
 		img: '../img/product6.jpg',
 		price: '46.00$',
+		data: 12,
 	},
 	{
 		title: 'Solid Round Neck T-shirt',
 		img: '../img/product7.jpg',
 		price: '36.00$',
+		data: 12,
 	},
 ]
-
 
 const products = productList.map(product => {
 	const productCart = document.querySelector('.products__cart')
 
 	productCart.innerHTML += `
-  <div class="products__cart-item">
+  <div class="products__cart-item" data-productId="${product.data}">
 									<img
 										src="${product.img}"
 										alt=""
@@ -91,3 +104,34 @@ const products = productList.map(product => {
   `
 	return productCart
 })
+
+const basketOpenIcon = document.querySelector('.nav__list-icon-img'),
+	basketClose = document.querySelector('.basketClose'),
+	basketOpen = document.querySelector('.basketOpen')
+
+function basketShowHidden(show, hidden) {
+	show.addEventListener('click', () => {
+		basketOpen.classList.add('basketOpen--show')
+	})
+	hidden.addEventListener('click', () => {
+		basketOpen.classList.remove('basketOpen--show')
+	})
+}
+basketShowHidden(basketOpenIcon, basketClose)
+
+let buttonAll = document.querySelectorAll('.products__cart-btn')
+let itemCount = document.querySelector('.elips')
+let count = 1
+
+function addCart() {
+	itemCount.textContent = count++
+}
+
+function addCartToBasket() {
+	buttonAll.forEach(button => {
+		button.addEventListener('click', () => {
+			addCart()
+		})
+	})
+}
+addCartToBasket()

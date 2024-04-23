@@ -40,7 +40,9 @@
 							<div class="exclusiv__content-timer__items">
 								<div class="exclusiv__content-timer-item timer__dayss">00</div>
 								<div class="exclusiv__content-timer-item timer__hourss">00</div>
-								<div class="exclusiv__content-timer-item timer__minutess">00</div>
+								<div class="exclusiv__content-timer-item timer__minutess">
+									00
+								</div>
 							</div>
 						</div>
 					</div>
@@ -74,14 +76,12 @@
 
 						<div class="nav__list-icon">
 							<div class="nav__list-icon-group">
-								<a href="" class="nav__list-icon-link">
-									<img
-										src="../img/shop.svg"
-										alt="Shop icon"
-										class="nav__list-icon-img"
-									/>
-									<span class="elips"></span>
-								</a>
+								<img
+									src="../img/shop.svg"
+									alt="Shop icon"
+									class="nav__list-icon-img"
+								/>
+								<span class="elips">0</span>
 							</div>
 							<button class="nav__list-icon-btn">LOGIN</button>
 						</div>
@@ -90,6 +90,27 @@
 			</header>
 
 			<main class="main">
+				<div class="basketOpen">
+					<header class="basket__header">
+						<nav class="basket__header-nav">
+							<img src="../img/logo.svg" alt="Logo" class="nav__link-img" />
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="bi bi-x basketClose"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+								/>
+							</svg>
+						</nav>
+					</header>
+					<div class="basket__body"></div>
+					<div class="basket__footer"></div>
+				</div>
 				<section class="top top-catalog">
 					<div class="container">
 						<h2 class="top-catalog__title">Сatalog</h2>
