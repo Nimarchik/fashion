@@ -89,7 +89,7 @@ const products = productList.map(product => {
 	const productCart = document.querySelector('.products__cart')
 
 	productCart.innerHTML += `
-  <div class="products__cart-item" data-productId="${product.data}">
+  <div class="products__cart-item" data-product="${product.data}">
 									<img
 										src="${product.img}"
 										alt=""
@@ -122,15 +122,47 @@ basketShowHidden(basketOpenIcon, basketClose)
 let buttonAll = document.querySelectorAll('.products__cart-btn')
 let itemCount = document.querySelector('.elips')
 let count = 1
+let countQuantit = 1
 
 function addCart() {
 	itemCount.textContent = count++
+}
+
+function countQuantity() {
+	const quantityElement = document.querySelector('.quantity')
+	quantityElement.innerHTML = ++countQuantit
 }
 
 function addCartToBasket() {
 	buttonAll.forEach(button => {
 		button.addEventListener('click', () => {
 			addCart()
+			const productsCard = button.closest('.products__cart-item')
+			const productId = productsCard.dataset.product
+			const productName = productsCard.querySelector(
+				'.products__cart-title'
+			).innerHTML
+			const productPrice = productsCard.querySelector(
+				'.products__cart-price'
+			).innerHTML
+			const imgLink = productsCard.querySelector('.products__cart-img').src
+			const existingCardItem = document.querySelector(
+				`li[data-product-id="${productId}"]`
+			)
+			const cardItemList = document.querySelector('.basket__body-cards')
+
+			if (existingCardItem) {
+				if (countQuantit == productId) {
+					countQuantity()
+				}
+				console.log('+++')
+			} else {
+				const cardItem = document.createElement('li')
+				cardItem.dataset.productId = productId
+				cardItem.innerHTML = `<img src="${imgLink}" class="img__basket"> <span  class="quantity">1</span> <h6 class="basket__title">${productName}</h6> <button class="remove">Прибрати</button>`
+
+				cardItemList.appendChild(cardItem)
+			}
 		})
 	})
 }
