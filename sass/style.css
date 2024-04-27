@@ -122,12 +122,15 @@ ol {
 }
 
 .elips {
+  color: #224f34;
+  font-size: 13px;
+  text-align: center;
   position: absolute;
   bottom: 5px;
-  right: 0;
+  right: -3px;
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: #10ff70;
 }
@@ -692,7 +695,10 @@ ol {
   left: 50%;
   width: 0;
   height: 0;
+  padding: 20px;
   transform: translate(-50%, -50%) scale(0);
+  border-radius: 20px;
+  box-shadow: 0 0 10px #224f34;
   transition: all 0.4s;
 }
 
@@ -705,10 +711,75 @@ ol {
   height: 80vh;
   background-color: #6bc785;
   z-index: 20;
+  overflow-y: scroll;
   transition: all 0.4s;
+}
+
+.basketClose {
+  width: 45px;
+  height: 45px;
 }
 
 .img__basket {
   width: 150px;
   height: 150px;
+}
+
+.hidden {
+  display: none;
+}
+
+.basket__header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basket__header {
+  margin-bottom: 20px;
+}
+
+.basket__body-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.basket__body-cards li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.img__basket {
+  width: 100px;
+  height: 100px;
+}
+
+.basket__title {
+  font-size: 20px;
+  font-family: "Roboto Slab", serif;
+  color: #224f34;
+}
+
+.remove {
+  width: 150px;
+  height: 40px;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  border: 1px solid #224f34;
+  transition: all 0.3s;
+}
+.remove:hover {
+  background-color: #224f34;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.basket__price {
+  color: #fff;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */
